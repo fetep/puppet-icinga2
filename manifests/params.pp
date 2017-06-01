@@ -97,7 +97,7 @@ class icinga2::params {
       $service_reload       = "service ${service} reload"
 
       case $::osfamily {
-        'redhat': {
+        'RedHat': {
           $user    = 'icinga'
           $group   = 'icinga'
           $lib_dir = $::architecture ? {
@@ -106,13 +106,13 @@ class icinga2::params {
           }
         } # RedHat
 
-        'debian': {
+        'Debian': {
           $user     = 'nagios'
           $group    = 'nagios'
           $lib_dir  = '/usr/lib'
         } # Debian
 
-        'suse': {
+        'Suse': {
           $user     = 'icinga'
           $group    = 'icinga'
           $lib_dir  = '/usr/lib'
@@ -133,7 +133,7 @@ class icinga2::params {
       }
     } # Linux
 
-    'windows': {
+    'Windows': {
       $user                 = 'SYSTEM'
       $group                = undef
       $conf_dir             = 'C:/ProgramData/icinga2/etc/icinga2'
